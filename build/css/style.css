@@ -617,17 +617,6 @@ button,
 
 .header {
   padding: 28px 0;
-  background-color: #2c39f2;
-}
-
-.header .container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.header__logo {
-  color: #ffffff;
 }
 
 .main-nav__list {

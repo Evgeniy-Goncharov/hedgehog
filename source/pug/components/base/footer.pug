@@ -1,3 +1,58 @@
-mixin footer(footerMods)
+mixin footer(footerMods, currentUrl)
+  -
+    const footerLinks = [
+      {
+        href: "#",
+        text: "Каталог"
+      },
+      {
+        href: "#",
+        text: "О нас"
+      },
+      {
+        href: "#",
+        text: "Контакты"
+      },
+      {
+        href: "#",
+        text: "Галерея"
+      },
+    ]
+
+    const socialLinks = [
+      {
+        name: "instagram",
+        icon: "inst"
+      },
+      {
+        name: "facebook",
+        icon: "fb"
+      },
+      {
+        name: "twitter",
+        icon: "twitter"
+      },
+    ]
   footer.footer(class=footerMods)
-    .container
+    .footer__left-column
+      +logo(currentUrl)
+      p.footer__copy Все права защищены. Указанная стоимость товаров и условия их приобретения действительны на текущую дату.
+
+    .footer__right-column
+      ul.footer__nav
+        each link in footerLinks
+          li.footer__nav-item
+            a(href=link.href)= link.text
+
+      ul.footer__social-list
+        each link in socialLinks
+          li.footer__social-item
+            a(href="#")
+              span.visually-hidden= link.text
+              svg(width="40" height="40")
+                use(xlink:href=`img/sprite_auto.svg#${link.icon}`)
+
+      a.footer__phone(href="tel:+79655698998") +7 (965) 569-89-98
+
+
+

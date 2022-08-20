@@ -16,17 +16,24 @@ mixin header(headerMods, currentUrl)
     ]
 
   header.header(class=headerMods)
-    .container
-      if(currentUrl === "index.html")
-        //- lighthouse снимает 10 баллов SEO за <a> без href
-        span.header__logo Логотип
-      else
-        a.header__logo(href="index.html", aria-label="Переход на главную") Логотип
+    +logo(currentUrl)
+    .header__right-column
       nav.main-nav
         button.main-nav__toggle.btn-reset(type="button", aria-label="Переключатель отображения меню", aria-pressed="false")
           +icon("icon-burger", 20, 20)
         .main-nav__wrapper
           ul.main-nav__list
+            li Каталог
+              ul.main-nav__sub-menu
+                li.main-nav__sub-item
+                  a(href="#") Ёжики
+                li.main-nav__sub-item
+                  a(href="#") Питание
+                li.main-nav__sub-item
+                  a(href="#") Переноски
+                li.main-nav__sub-item
+                  a(href="#") Лекарства
+
             each link in headerLinks
               - const activeState = currentUrl === link.href
               li.main-nav__item
@@ -34,3 +41,6 @@ mixin header(headerMods, currentUrl)
                   span.main-nav__link.is-active=link.text
                 else
                   a.main-nav__link(href=link.href)=link.text
+      a.header__phone(href="tel:+79655698998") +7 (965) 569-89-98
+      a.header__cart(href="#")
+        span.visually-hidden Перейти в корзину

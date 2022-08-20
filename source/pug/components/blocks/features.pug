@@ -1,0 +1,33 @@
+mixin features()
+  -
+    const featuresList = [
+      {
+        title: "Разведение ежиков",
+        text: "Собственная ферма, уход и содержание",
+        img: "img/svg/hedgehog.svg",
+        alt: "Ежик это"
+      },
+      {
+        title: "Здоровье",
+        text: "Всегда прививаем и вовремя обследуем ваших будущих питомцев",
+        img: "img/svg/health.svg",
+        alt: "Ежик это"
+      },
+      {
+        title: "Любовь и забота",
+        text: "Каждому ежику мы дарим много внимания",
+        img: "img/svg/health.svg",
+        alt: "Ежик это"
+      },
+    ]
+
+  section.features
+    .container
+      h2.visually-hidden Зачем покупать ёжика?
+      ul.features__list
+        each item in featuresList
+          li.features__item
+            h3.features__title=item.title
+            p.features__text=item.text
+            span.features__image-wrapper
+              img.features__image(src=item.img alt=item.alt width="72" height="72")

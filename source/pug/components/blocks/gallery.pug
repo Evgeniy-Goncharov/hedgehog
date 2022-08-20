@@ -1,0 +1,42 @@
+mixin gallery()
+  -
+    const galleryList = [
+      {
+        name: "Евгений",
+        description: "Очень любит сладости. Маленький сладкоежка=) Мы называем его так между собой. Ручной, любит внимаение",
+        oldPrice: "3 000",
+        price: "1 500",
+        image: "img-1",
+        alt: "Милый ежик Евгений",
+      },
+      {
+        name: "Максим",
+        description: "Немного игривый и задорный характер этого друга никого не оставит равнодушным!",
+        oldPrice: "5 000",
+        price: "2 500",
+        image: "img-2",
+        alt: "Милый ежик Максим",
+      },
+    ]
+
+  section.gallery
+    .container
+      .gallery_wrapper
+        ul.gallery__list
+          each item in galleryList
+            li.gallery__item
+              h3.gallery__item-title= `Ежик ${item.name}`
+              p.gallery__item-description= item.description
+              span.gallery__old-price= `${item.oldPrice} Р`
+              span.gallery__price= `${item.price} Р`
+              +picture("content", image, png, "393", "293", item.alt)
+              a.gallery__info-button(href="#")
+                span.visually-hidden Показать информацию
+              .gallery__item-info
+                span привит
+                  svg
+                    use(xlink:href="img/sprite_auto#solid")
+                span 1235
+                  svg
+                    use(xlink:href="img/sprite_auto#solid")
+

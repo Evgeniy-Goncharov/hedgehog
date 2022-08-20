@@ -1,0 +1,5 @@
+mixin logo(currentUrl)
+  if(currentUrl === "index.html")
+    span.header__logo Логотип
+  else
+    a.header__logo(href="index.html", aria-label="Переход на главную") Логотип
