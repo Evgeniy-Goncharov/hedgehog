@@ -649,9 +649,9 @@ body {
 
 .container {
   width: 100%;
-  max-width: 1920px;
+  max-width: 1317px;
   margin: 0 auto;
-  padding: 0 40px;
+  padding: 0 60px;
 }
 
 .logo__image {
@@ -900,7 +900,7 @@ body {
 .page-main__bg-wrapper {
   background-image: url("../../img/bg/img-1.png"), url("../../img/bg/img-2.png"), url("../../img/bg/bg.png");
   background-repeat: no-repeat, no-repeat, no-repeat;
-  background-position: bottom left, bottom right, bottom center;
+  background-position: bottom left, bottom right, bottom 120px center;
   background-size: 458px 565px, 456px 347px, cover;
 }
 
@@ -1581,6 +1581,83 @@ body {
   text-transform: uppercase;
 }
 
+.features {
+  padding-bottom: 100px;
+}
+
+.features__list {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+  grid-template-columns: repeat(3, 1fr);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.features__item {
+  text-align: center;
+  padding-top: 182px;
+  position: relative;
+  max-width: 190px;
+  -ms-grid-column-align: center;
+  justify-self: center;
+  top: 23px;
+}
+
+.features__item:nth-child(2) {
+  top: 0;
+}
+
+.features__title {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+  text-transform: uppercase;
+}
+
+.features__text {
+  font-family: "Raleway", "Arial", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+}
+
+.features__image-wrapper {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  width: 152px;
+  height: 152px;
+  border-radius: 50%;
+  -webkit-box-shadow: 4px 4px 20px #C2CCCA, -8px -8px 20px #FFFFFF;
+  box-shadow: 4px 4px 20px #C2CCCA, -8px -8px 20px #FFFFFF;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+
+.features__image-wrapper--almond {
+  background-color: #FFEDCD;
+}
+
+.features__image-wrapper--green {
+  background-color: #E2F0DF;
+}
+
+.features__image-wrapper--gumbo {
+  background-color: #70908B;
+}
+
 /* @media (hover: hover), screen and (min-width: 0\0) {
   &:hover,
   &:focus {
@@ -1644,12 +1721,6 @@ body {
 @media (-webkit-min-device-pixel-ratio: 1.5) and (min-width: 1024px), (-o-min-device-pixel-ratio: 3/2) and (min-width: 1024px), (min-resolution: 144dpi) and (min-width: 1024px), (min-resolution: 1.5dppx) and (min-width: 1024px) {
   .page-main__bg-wrapper {
     background-image: url("../../img/bg/img-1@2x.png"), url("../../img/bg/img-2@2x.png"), url("../../img/bg/bg@2x.png");
-  }
-}
-
-@media (max-width: 1439px) {
-  .container {
-    padding: 0 32px;
   }
 }
 

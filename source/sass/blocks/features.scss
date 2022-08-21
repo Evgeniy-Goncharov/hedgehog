@@ -1,0 +1,68 @@
+.features {
+
+  padding-bottom: 100px;
+}
+
+.features__list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.features__item {
+  text-align: center;
+  padding-top: 182px;
+  position: relative;
+  max-width: 190px;
+  justify-self: center;
+
+  top: 23px;
+
+  &:nth-child(2) {
+    top: 0;
+  }
+}
+
+.features__title {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+  text-transform: uppercase;
+}
+
+.features__text {
+  font-family: "Raleway", "Arial", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+}
+
+.features__image-wrapper {
+  display: inline-flex;
+  width: 152px;
+  height: 152px;
+  border-radius: 50%;
+  box-shadow: 4px 4px 20px #C2CCCA, -8px -8px 20px #FFFFFF;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+
+  &--almond {
+    background-color: $color-blanched-almond;
+  }
+
+  &--green {
+    background-color: $color-apple-green;
+  }
+
+  &--gumbo {
+    background-color: $color-shades-of-gumbo;
+  }
+}

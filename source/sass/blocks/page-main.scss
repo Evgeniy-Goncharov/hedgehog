@@ -5,7 +5,7 @@
 .page-main__bg-wrapper {
   background-image: url("../../img/bg/img-1.png"), url("../../img/bg/img-2.png"), url("../../img/bg/bg.png");
   background-repeat: no-repeat, no-repeat, no-repeat;
-  background-position: bottom left, bottom right, bottom center;
+  background-position: bottom left, bottom right, bottom 120px center;
   background-size: 458px 565px, 456px 347px, cover;
 
   @include retina {

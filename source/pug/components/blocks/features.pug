@@ -5,19 +5,22 @@ mixin features()
         title: "Разведение ежиков",
         text: "Собственная ферма, уход и содержание",
         img: "img/svg/hedgehog.svg",
-        alt: "Ежик это"
+        alt: "Ежик это",
+        wrapperMod: "almond"
       },
       {
         title: "Здоровье",
         text: "Всегда прививаем и вовремя обследуем ваших будущих питомцев",
-        img: "img/svg/health.svg",
-        alt: "Ежик это"
+        img: "img/svg/solid.svg",
+        alt: "Ежик это",
+        wrapperMod: "green"
       },
       {
         title: "Любовь и забота",
         text: "Каждому ежику мы дарим много внимания",
         img: "img/svg/health.svg",
-        alt: "Ежик это"
+        alt: "Ежик это",
+        wrapperMod: "gumbo"
       },
     ]
 
@@ -29,5 +32,5 @@ mixin features()
           li.features__item
             h3.features__title=item.title
             p.features__text=item.text
-            span.features__image-wrapper
+            span.features__image-wrapper(class=`features__image-wrapper--${item.wrapperMod}`)
               img.features__image(src=item.img alt=item.alt width="72" height="72")
