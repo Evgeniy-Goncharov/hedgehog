@@ -1,0 +1,28 @@
+.intro {
+  padding-top: 290px;
+  text-align: center;
+  padding-bottom: 127px;
+}
+
+.intro__heading {
+  width: 443px;
+  height: 95px;
+}
+
+.intro__text {
+  font-family: "Raleway", "Arial", sans-serif;
+  font-size: 14px;
+  line-height: 16px;
+  color: $color-shades-of-gumbo;
+  padding: 0;
+  margin: 20px 0;
+
+  &--big {
+    font-family: "Cormorant Infant", "Arial", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 50px;
+    line-height: 61px;
+    text-transform: uppercase;
+  }
+}

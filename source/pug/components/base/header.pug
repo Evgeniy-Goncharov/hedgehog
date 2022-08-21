@@ -2,16 +2,16 @@ mixin header(headerMods, currentUrl)
   -
     const headerLinks = [
       {
-        href: "index.html",
-        text: "Главная"
+        href: "#",
+        text: "О нас"
       },
       {
         href: "#",
-        text: "Страница 2"
+        text: "Контакты"
       },
       {
         href: "#",
-        text: "Страница 3"
+        text: "Галерея"
       },
     ]
 
@@ -23,16 +23,17 @@ mixin header(headerMods, currentUrl)
           +icon("icon-burger", 20, 20)
         .main-nav__wrapper
           ul.main-nav__list
-            li Каталог
+            li.main-nav__item.main-nav__item--has-child
+              a.main-nav__link(href="#") Каталог
               ul.main-nav__sub-menu
                 li.main-nav__sub-item
-                  a(href="#") Ёжики
+                  a.main-nav__link(href="#") Ёжики
                 li.main-nav__sub-item
-                  a(href="#") Питание
+                  a.main-nav__link(href="#") Питание
                 li.main-nav__sub-item
-                  a(href="#") Переноски
+                  a.main-nav__link(href="#") Переноски
                 li.main-nav__sub-item
-                  a(href="#") Лекарства
+                  a.main-nav__link(href="#") Лекарства
 
             each link in headerLinks
               - const activeState = currentUrl === link.href
@@ -41,6 +42,15 @@ mixin header(headerMods, currentUrl)
                   span.main-nav__link.is-active=link.text
                 else
                   a.main-nav__link(href=link.href)=link.text
-      a.header__phone(href="tel:+79655698998") +7 (965) 569-89-98
-      a.header__cart(href="#")
-        span.visually-hidden Перейти в корзину
+      div.header__item
+        a.header__phone(href="tel:+79655698998") +7 (965) 569-89-98
+          span
+            svg(width="32" height="32")
+              use(xlink:href="img/sprite_auto.svg#phone")
+      div.header__item
+        a.header__cart(href="#")
+          span.visually-hidden Перейти в корзину
+          svg(width="36" height="33")
+              use(xlink:href="img/sprite_auto.svg#cart")
+          span.header__cart-count 1
+

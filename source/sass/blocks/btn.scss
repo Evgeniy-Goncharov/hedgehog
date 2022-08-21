@@ -1,15 +1,53 @@
 .btn {
   display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
   margin: 10px 0;
   padding: 10px 20px;
+  min-height: 69px;
+  min-width: 328px;
+  position: relative;
+
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16px;
 
   color: $color-default-white;
-
-  background-color: $color-neon-blue;
+  background-color: $color-shades-of-gumbo;
+  box-shadow: 4px 4px 20px #C2CCCA, -8px -8px 20px #FFFFFF;
+  border-radius: 40px;
   border: none;
   cursor: pointer;
+  user-select: none;
+  transition: color, background-color $trans-default;
 
-  transition: opacity $trans-default;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: linear-gradient(90.14deg, #B0D3CE -2.41%, #FFEDCE 99.79%);
+    border-radius: 40px;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity $trans-default;
+  }
+
+  span {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    bottom: 10px;
+    left: 20px;
+    margin: auto;
+    height: min-content;
+    z-index: 2;
+  }
 
   &--red {
     background-color: $color-torch-red;
@@ -21,10 +59,17 @@
     pointer-events: none;
   }
 
-  @media (hover: hover), screen and (min-width: 0\0) {
+  @media (hover: hover),
+  screen and (min-width: 0\0) {
+
     &:hover,
     &:focus {
-      opacity: 0.8;
+      color: $color-blue-stone;
+      background-color: transparent;
+
+      &::before {
+        opacity: 1;
+      }
     }
   }
 }

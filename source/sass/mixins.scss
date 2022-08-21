@@ -6,6 +6,12 @@
 
 // Desktop first
 
+@mixin desk {
+  @media (min-width: $vp-1024) {
+    @content;
+  }
+}
+
 @mixin vp-1919 {
   @media (max-width: $vp-1920 - 1) {
     @content;

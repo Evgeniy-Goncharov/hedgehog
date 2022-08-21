@@ -65,3 +65,10 @@
   /* stylelint-disable-next-line */
   transition: none !important;
 }
+
+body {
+  font-family: "Cormorant Infant", "Arial", sans-serif;
+  font-size: 14px;
+  line-height: 22px;
+  color: $color-blue-stone;
+}

@@ -1,3 +1,126 @@
 .header {
-  padding: 28px 0;
+  padding: 35px 60px;
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.header__right-column {
+  margin-left: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.header__item {
+  margin-right: 80px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.header__phone {
+  font-family: "Raleway", "Arial", sans-serif;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 26px;
+  font-feature-settings: 'pnum' on, 'lnum' on;
+  color: $color-blue-stone;
+  display: flex;
+  align-items: center;
+
+  span {
+    order: -1;
+    width: 69px;
+    height: 69px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    box-shadow: -4px -4px 20px #FFFFFF, 4px 4px 20px #CFD7D3;
+    background-color: transparent;
+    border-radius: 40px;
+    margin-right: 20px;
+    position: relative;
+    transition: background-color $trans-default;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      border-radius: 50%;
+      background: linear-gradient(1.36deg, #B0D3CE 12.29%, #FFEDCE 83.89%);
+      transition: opacity $trans-default;
+      z-index: 1;
+    }
+  }
+
+  svg {
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    z-index: 2;
+    fill: $color-blue-stone;
+    transition: fill $trans-default;
+  }
+
+  @media (hover: hover), screen and (min-width: 0\0) {
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
+
+    &:hover span,
+    &:focus span {
+      background-color: $color-shades-of-gumbo;
+    }
+
+    &:hover span::before,
+    &:focus span::before {
+      opacity: 0;
+    }
+
+    &:hover svg,
+    &:focus svg {
+      fill: $color-default-white;
+    }
+  }
+}
+
+.header__cart {
+  position: relative;
+  display: block;
+  fill: $color-blue-stone;
+  transition: fill $trans-default;
+
+  @media (hover: hover), screen and (min-width: 0\0) {
+    &:hover,
+    &:focus {
+      fill: $color-default-white;
+    }
+  }
+}
+
+.header__cart-count {
+  position: absolute;
+  top: -9px;
+  right: -9px;
+  background-color: $color-blanched-almond;
+  display: inline-flex;
+  width: 19px;
+  height: 19px;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
 }

@@ -1,7 +1,9 @@
 mixin intro()
   section.intro
     .container
-      p.intro__heading Ёжики
+      h1.visually-hidden Ёжики
+      svg.intro__heading(width="443" height="95")
+        use(xlink:href="img/sprite_auto.svg#heading")
       p.intro__text.intro__text--big Тоже любят молоко
       p.intro__text Заведите себе ёжика. Он всегда выслушает, не будет мяукать в 5 утра и царапать вашу мебель.
       +btn({tag: "a", href: "#", text: "Купить ежика"})

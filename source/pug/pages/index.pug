@@ -10,11 +10,12 @@ block variables
   - const currentUrl = "index.html" //- для остальных страниц пишем пустую строку или индекс активного headerLinks
 
 block main
-  main
+  main.page-main
     //- на странице запрещен "голый" код
     //- все блоки вставляются из папки pug/components/blocks
-    +intro()
-    +features()
+    div.page-main__bg-wrapper
+      +intro()
+      +features()
     +gallery()
     +order()
 
