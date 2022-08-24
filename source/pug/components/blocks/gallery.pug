@@ -7,7 +7,32 @@ mixin gallery()
         oldPrice: "3 000",
         price: "1 500",
         image: "img-1",
+        width: "363",
+        height: "265",
         alt: "Милый ежик Евгений",
+        cardMod: "almond"
+      },
+      {
+        name: "Максим",
+        description: "Немного игривый и задорный характер этого друга никого не оставит равнодушным!",
+        oldPrice: "5 000",
+        price: "2 500",
+        image: "img-2",
+        width: "394",
+        height: "294",
+        alt: "Милый ежик Максим",
+        cardMod: "green"
+      },
+      {
+        name: "Евгений",
+        description: "Очень любит сладости. Маленький сладкоежка=) Мы называем его так между собой. Ручной, любит внимаение",
+        oldPrice: "3 000",
+        price: "1 500",
+        image: "img-1",
+        width: "363",
+        height: "265",
+        alt: "Милый ежик Евгений",
+        cardMod: "almond"
       },
       {
         name: "Максим",
@@ -16,27 +41,45 @@ mixin gallery()
         price: "2 500",
         image: "img-2",
         alt: "Милый ежик Максим",
+        cardMod: "green"
       },
     ]
 
   section.gallery
-    .container
-      .gallery_wrapper
-        ul.gallery__list
+    h2.visually-hidden Выберите себе подходящего ежика
+    .gallery__navigation-wrapper
+      .gallery__wrapper.swiper(data-slider="gallery")
+        ul.gallery__list.swiper-wrapper
           each item in galleryList
-            li.gallery__item
-              h3.gallery__item-title= `Ежик ${item.name}`
-              p.gallery__item-description= item.description
-              span.gallery__old-price= `${item.oldPrice} Р`
-              span.gallery__price= `${item.price} Р`
-              +picture("content", image, png, "393", "293", item.alt)
+            li.gallery__item.swiper-slide(class=`gallery__item--${item.cardMod}`)
+              div
+                h3.gallery__item-title= `Ежик “${item.name}”`
+
+                p.gallery__item-description= item.description
+
+              div
+                span.gallery__old-price= `${item.oldPrice} Р`
+                span.gallery__price= `${item.price} Р`
+              .gallery__image-wrapper
+                +picture("content", item.image, "jpg", item.width, item.height, item.alt)
+
               a.gallery__info-button(href="#")
                 span.visually-hidden Показать информацию
+                svg(width="37" height="37")
+                  use(xlink:href="img/sprite_auto.svg#info")
+
               .gallery__item-info
                 span привит
-                  svg
-                    use(xlink:href="img/sprite_auto#solid")
+                  svg(width="26" height="26")
+                    use(xlink:href="img/sprite_auto.svg#solid")
                 span 1235
-                  svg
-                    use(xlink:href="img/sprite_auto#solid")
+                  svg(width="22" height="22")
+                    use(xlink:href="img/sprite_auto.svg#like")
 
+              a.gallery__buy-button(href="#")
+                span.visually-hidden Заказать ежика
+                svg(width="40" height="40")
+                  use(xlink:href="img/sprite_auto.svg#plus")
+
+      .gallery__button.gallery__button--prev.swiper-button-prev
+      .gallery__button.gallery__button--next.swiper-button-next

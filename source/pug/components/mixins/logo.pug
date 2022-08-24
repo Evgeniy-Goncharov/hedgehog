@@ -1,10 +1,10 @@
 mixin logo(currentUrl)
   if(currentUrl === "index.html")
-    span
+    span.logo&attributes(attributes)
       svg.logo__image(width="120" height="56")
         use(xlink:href="img/sprite_auto.svg#logo")
 
   else
-    a.logo(href="index.html", aria-label="Переход на главную")
+    a.logo(href="index.html", aria-label="Переход на главную")&attributes(attributes)
       svg.logo__image(width="120" height="56")
         use(xlink:href="img/sprite_auto.svg#logo")

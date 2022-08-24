@@ -33,16 +33,18 @@ mixin footer(footerMods, currentUrl)
         icon: "twitter"
       },
     ]
+
   footer.footer(class=footerMods)
     .footer__left-column
-      +logo(currentUrl)
-      p.footer__copy Все права защищены. Указанная стоимость товаров и условия их приобретения действительны на текущую дату.
+      +logo(currentUrl).logo--white
+      p.footer__copy Все права защищены.<br> Указанная стоимость товаров и условия их приобретения действительны на текущую дату.
 
     .footer__right-column
-      ul.footer__nav
-        each link in footerLinks
-          li.footer__nav-item
-            a(href=link.href)= link.text
+      .footer__nav.main-nav.main-nav--footer
+        ul.main-nav__list
+          each link in footerLinks
+            li.main-nav__item
+              a(href=link.href).main-nav__link= link.text
 
       ul.footer__social-list
         each link in socialLinks

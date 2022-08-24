@@ -3,14 +3,15 @@
 }
 
 .page-main__bg-wrapper {
-  background-image: url("../../img/bg/img-1.png"), url("../../img/bg/img-2.png"), url("../../img/bg/bg.png");
-  background-repeat: no-repeat, no-repeat, no-repeat;
-  background-position: bottom left, bottom right, bottom 120px center;
-  background-size: 458px 565px, 456px 347px, cover;
+  background-image: url("../../img/bg/bg.png");
+  background-repeat: no-repeat;
+  background-position: bottom 47px center;
+  background-size: cover;
+  position: relative;
 
   @include retina {
     @include desk {
-      background-image: url("../../img/bg/img-1@2x.png"), url("../../img/bg/img-2@2x.png"), url("../../img/bg/bg@2x.png");
+      background-image: url("../../img/bg/bg@2x.png");
     }
   }
 }

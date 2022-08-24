@@ -1,5 +1,7 @@
 .logo {
-
+  &--white .logo__image {
+    fill: $color-default-white;
+  }
 }
 
 .logo__image {

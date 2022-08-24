@@ -1,12 +1,10 @@
 .main-nav {
-  padding: 0 97px;
+  padding: 14px 88px;
 
   &__list {
     display: flex;
     flex-wrap: wrap;
     margin: 0;
-    margin-right: 20px;
-    margin-left: 60px;
     padding: 0;
 
     list-style: none;
@@ -63,6 +61,15 @@
 
   &__toggle {
     display: none;
+  }
+
+  &--footer {
+    padding: 0;
+    padding-top: 10px;
+
+    .main-nav__link {
+      color: $color-default-white;
+    }
   }
 
   @media (hover: hover), screen and (min-width: 0\0) {

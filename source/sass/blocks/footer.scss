@@ -1,5 +1,87 @@
 .footer {
-  padding: 40px 0;
+  padding: 49px 60px 11px;
 
-  background-color: $color-neon-blue;
+  background-color: $color-shades-of-gumbo;
+  color: $color-default-white;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer__left-column {
+  margin-right: 20px;
+  max-width: 400px;
+}
+
+.footer__right-column {
+  display: flex;
+  align-items: flex-start;
+}
+
+.footer__nav {
+  margin-right: 55px;
+}
+
+.footer__social-list {
+  margin: 0;
+  padding: 0;
+  padding-top: 17px;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 13px;
+  margin-right: 71px;
+
+  svg {
+    width: 40px;
+    height: 40px;
+    fill: $color-default-white;
+    transition: fill $trans-default;
+  }
+
+  a {
+
+    @media (hover: hover),
+    screen and (min-width: 0\0) {
+
+      &:hover,
+      &:focus {
+        svg {
+          fill: $color-blue-stone;
+        }
+      }
+    }
+  }
+}
+
+.footer__phone {
+  font-family: "Raleway", "Arial", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 26px;
+  margin-top: 25px;
+
+  text-transform: uppercase;
+  font-feature-settings: 'tnum' on, 'lnum' on;
+
+  color: $color-default-white;
+
+  @media (hover: hover),
+  screen and (min-width: 0\0) {
+
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
+  }
+}
+
+.footer__copy {
+  font-family: "Raleway", "Arial", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 9px;
+  line-height: 12px;
+  color: $color-default-white;
+  margin: 18px 0;
 }

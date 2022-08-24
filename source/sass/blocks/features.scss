@@ -1,19 +1,56 @@
 .features {
+  padding-bottom: 50px;
 
-  padding-bottom: 100px;
+  &::before {
+    content: "";
+    position: absolute;
+    width: 458px;
+    height: 565px;
+    left: 0;
+    bottom: -43px;
+    background-image: url("../../img/bg/img-1.png");
+    background-repeat: no-repeat;
+    background-position: bottom left;
+    background-size: cover;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 892px;
+    height: 1582px;
+    right: 0;
+    bottom: -60%;
+    background-image: url("../../img/bg/img-2.png"), url("../../img/bg/radial-gradient.png");
+    background-repeat: no-repeat, no-repeat;
+    background-position: center right, center;
+    background-size: 456px 347px, cover;
+  }
+
+  @include retina {
+    @include desk {
+      &::before {
+        background-image: url("../../img/bg/img-1@2x.png");
+      }
+
+      &::after {
+        background-image:  url("../../img/bg/img-2@2x.png"), url("../../img/bg/radial-gradient.png");
+      }
+    }
+  }
 }
 
 .features__list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   margin: 0;
-  padding: 0;
+  padding: 0 81px;
   list-style: none;
 }
 
 .features__item {
   text-align: center;
-  padding-top: 182px;
+  padding-top: 167px;
   position: relative;
   max-width: 190px;
   justify-self: center;
@@ -30,6 +67,7 @@
   font-size: 16px;
   line-height: 19px;
   text-transform: uppercase;
+  margin-bottom: 6px;
 }
 
 .features__text {
@@ -38,6 +76,7 @@
   font-weight: 400;
   font-size: 14px;
   line-height: 22px;
+  margin: 6px 0;
 }
 
 .features__image-wrapper {
@@ -65,4 +104,10 @@
   &--gumbo {
     background-color: $color-shades-of-gumbo;
   }
+}
+
+.features__image {
+  width: 72px;
+  height: 72px;
+  object-fit: scale-down;
 }
