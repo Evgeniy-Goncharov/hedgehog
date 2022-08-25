@@ -1,21 +1,5 @@
 mixin order()
   -
-    const checkList = [
-      {
-        text: "хочу ёжика для себя",
-        name: "self",
-        checked: true
-      },
-      {
-        text: "хочу ёжика для детей",
-        name: "kind",
-      },
-      {
-        text: "хочу ёжика для разведения",
-        name: "breeding",
-      },
-    ]
-
     const countList = [
       {
         text: "Мне нужен 1-2 ёжика",
@@ -54,20 +38,22 @@ mixin order()
     ]
 
   section.order
-    .container
+    .container.order__wrapper
       form(method="POST" action="https://echo.htmlacademy.ru")
-        h2.order__title Заполните заявку и мы забронируем для Вас нового друга
+        h2.order__title Заполните заявку и мы забронируем для Вас нового&nbsp;друга
 
         .order__menu
           fieldset.order__left-column
             legend.visually-hidden Какого ежика вы хотите?
-            each item in checkList
-              +custom-input({inputType: "checkbox", inputLabel: item.text, inputName: item.name, isChecked: item.checked})
+            +custom-input({inputType: "checkbox", inputLabel: "хочу ёжика для себя", inputName: "self", isChecked: true}).custom-input--w-170
+            +custom-input({inputType: "checkbox", inputLabel: "хочу ёжика для детей", inputName: "kind"}).custom-input--w-170
+            +custom-input({inputType: "checkbox", inputLabel: "хочу ёжика для разведения", inputName: "breeding"}).custom-input--w-199
+
 
           fieldset.order__right-column
             legend.visually-hidden Сколько ежиков вы хотите?
-            each item in countList
-              +custom-input({inputType: "radio", inputLabel: item.text, inputName: "count", inputValue: item.value, isChecked: item.checked})
+            each item, index in countList
+              +custom-input({inputType: "radio", inputLabel: item.text, inputName: "count", inputValue: item.value, isChecked: item.checked})(data-order=index)
 
         fieldset.order__row
           legend.visually-hidden Заполните ваши контактные данные
@@ -76,13 +62,13 @@ mixin order()
 
         +custom-textarea({inputPlaceholder: "Комментарий к заявке"})
 
-        +btn({tag: "button", type: "button", text: "Купить ежика"}).order__submit-button
+        +btn({tag: "button", type: "button", text: "Купить ежика"}).order__submit-button.btn--mobile-h-69
 
       p.order__balance
         svg(width="41" height="41")
           use(xlink:href="img/sprite_auto.svg#hedgehog_green")
         span У нас осталось еще: <span class="underline">25 ёжиков</span>
       p
-        small Торопитесь! Акция действует до 26.02.2023
+        small Торопитесь! Акция действует до 26. 02. 2023
 
 

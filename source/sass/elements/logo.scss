@@ -8,4 +8,9 @@
   width: 120px;
   height: 56px;
   fill: $color-blue-stone;
+
+  @include vp-767 {
+    width: 56px;
+    height: 26px;
+  }
 }

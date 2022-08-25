@@ -24,6 +24,7 @@ $color-blanched-almond:             #FFEDCD;
 $black-to-right:                    linear-gradient(90deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 75%);
 $shadow:                            4px 4px 20px #C2CCCA;
 $shadow-for-phone:                  -4px -4px 20px #FFFFFF, 4px 4px 20px #CFD7D3;
+$shadow-for-phone-mobile:           0px 4px 4px rgba(0, 0, 0, 0.25);
 $shadow-for-card:                   4px 4px 40px #F1F1F1;
 
 // Typography
@@ -57,7 +58,7 @@ $vp-375:                            375px;
 $vp-768:                            768px;
 $vp-1024:                           1024px;
 $vp-1280:                           1280px;
-$vp-1440:                           1440px;
+$vp-1500:                           1500px;
 $vp-1920:                           1920px;
 
 // Retina

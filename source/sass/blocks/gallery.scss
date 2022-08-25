@@ -1,6 +1,10 @@
 .gallery {
   padding-top: 31px;
   padding-bottom: 40px;
+
+  @include vp-767 {
+    padding-top: 10px;
+  }
 }
 
 .gallery__navigation-wrapper {
@@ -8,6 +12,10 @@
   position: relative;
   max-width: 1317px;
   margin: 0 auto;
+
+  @include vp-767 {
+    padding: 0 0 0 21px;
+  }
 }
 
 .gallery__list {
@@ -17,7 +25,6 @@
 }
 
 .gallery__item {
-  margin-right: 59px;
   padding: 44px 326px 54px 60px;
   position: relative;
   border-radius: 20px;
@@ -25,6 +32,7 @@
   height: auto;
   display: flex;
   flex-direction: column;
+  min-height: 350px;
 
   div:first-of-type {
     flex-grow: 1;
@@ -67,12 +75,40 @@
   &::after {
     content: "";
     position: absolute;
-    bottom: 0;
-    right: 0;
+    bottom: -1px;
+    right: -1px;
     border-top: 42px solid transparent;
     border-right: 42px solid $color-default-white;
     border-bottom: 42px solid $color-default-white;
     border-left: 42px solid transparent;
+  }
+
+  @include vp-767 {
+    padding-right: 97px;
+    padding-left: 30px;
+    max-width: 244px;
+    padding-top: 35px;
+    padding-bottom: 20px;
+    min-height: 318px;
+
+    background-size: 182px 70px;
+    background-position: bottom 25px right -45px;
+
+    &::before {
+      font-size: 12px;
+      line-height: 14px;
+      width: 48px;
+      height: 21px;
+      left: 30px;
+      top: -5px;
+    }
+
+    &::after {
+      border-top: 27px solid transparent;
+      border-right: 27px solid $color-default-white;
+      border-bottom: 27px solid $color-default-white;
+      border-left: 27px solid transparent;
+    }
   }
 }
 
@@ -82,6 +118,12 @@
   line-height: 48px;
   margin: 10px 0;
   padding: 0;
+
+  @include vp-767 {
+    font-size: 30px;
+    line-height: 30px;
+    margin-bottom: 7px;
+  }
 }
 
 .gallery__item-description {
@@ -94,11 +136,12 @@
   margin: 12px 0;
   padding: 0;
   flex-grow: 1;
-}
 
-.gallery__old-price,
-.gallery__price {
-  display: block;
+  @include vp-767 {
+    font-size: 11px;
+    line-height: 16px;
+    margin: 7px 0;
+  }
 }
 
 .gallery__image-wrapper {
@@ -108,11 +151,21 @@
   right: 4px;
   display: flex;
   align-items: center;
+
+  @include vp-767 {
+    right: -42px;
+    bottom: 0;
+  }
 }
 
 .gallery__item img {
   max-width: 394px;
   max-height: 294px;
+
+  @include vp-767 {
+    max-width: 177px;
+    max-height: 129px;
+  }
 }
 
 .gallery__info-button {
@@ -124,13 +177,42 @@
   &:focus~.gallery__item-info {
     display: block;
   }
+
+  @include vp-767 {
+    display: none;
+  }
 }
 
 .gallery__buy-button {
   position: absolute;
-  bottom: -13px;
-  right: -1px;
+  bottom: -12px;
+  right: 0;
   z-index: 1;
+  transition: transform $trans-default;
+
+  svg {
+    width: 40px;
+    height: 40px;
+  }
+
+  @media (hover: hover),
+  screen and (min-width: 0\0) {
+
+    &:hover,
+    &:focus {
+      transform: scale(1.2);
+    }
+  }
+
+  @include vp-767 {
+    bottom: -13px;
+    right: -6px;
+
+    svg {
+      width: 37px;
+      height: 37px;
+    }
+  }
 }
 
 .gallery__item-info {
@@ -142,6 +224,14 @@
   padding: 34px 29px;
   z-index: 1;
   display: none;
+
+  font-family: "Raleway", "Arial", sans-serif;
+  font-feature-settings: 'pnum' on, 'lnum' on;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+  text-transform: lowercase;
 
   span {
     display: inline-flex;
@@ -156,6 +246,7 @@
   span svg {
     order: -1;
     margin-right: 4px;
+    fill: $color-default-white;
   }
 
   &::before {
@@ -172,6 +263,41 @@
     right: 0;
     margin: 0 auto;
   }
+
+  @include vp-767 {
+    display: block;
+    padding: 10px;
+    right: 11px;
+    top: 4px;
+
+    background-color: transparent;
+    color: $color-blue-stone;
+
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 16px;
+
+    &::before {
+      display: none;
+    }
+
+    span {
+      margin-right: 17px;
+    }
+
+    span svg {
+      width: 13px;
+      height: 13px;
+      fill: $color-blue-stone;
+      margin-right: 1px;
+      margin-bottom: 3px;
+    }
+  }
+}
+
+.gallery__old-price,
+.gallery__price {
+  display: block;
 }
 
 .gallery__old-price {
@@ -182,12 +308,22 @@
   color: $color-geyser;
   margin: 0;
   padding: 0;
+
+  @include vp-767 {
+    font-size: 20px;
+    line-height: 24px;
+  }
 }
 
 .gallery__price {
   font-weight: 700;
   font-size: 40px;
   line-height: 36px;
+
+  @include vp-767 {
+    font-size: 40px;
+    line-height: 45px;
+  }
 }
 
 .gallery__button {
@@ -205,5 +341,8 @@
   &--next::after {
     background: url("../../img/svg/next.svg") no-repeat center;
   }
-}
 
+  @include vp-767 {
+    display: none;
+  }
+}

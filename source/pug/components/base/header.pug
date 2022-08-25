@@ -16,10 +16,10 @@ mixin header(headerMods, currentUrl)
     ]
 
   header.header(class=headerMods)
-    +logo(currentUrl)
+    +logo(currentUrl).header__logo
     .header__right-column
       nav.main-nav
-        button.main-nav__toggle.btn-reset(type="button", aria-label="Переключатель отображения меню", aria-pressed="false")
+        button.header__menu-button.main-nav__toggle.btn-reset(type="button", aria-label="Переключатель отображения меню", aria-pressed="false")
           +icon("icon-burger", 20, 20)
         .main-nav__wrapper
           ul.main-nav__list
@@ -43,7 +43,8 @@ mixin header(headerMods, currentUrl)
                 else
                   a.main-nav__link(href=link.href)=link.text
       div.header__item
-        a.header__phone(href="tel:+79655698998") +7 (965) 569-89-98
+        a.header__phone(href="tel:+79655698998")
+          span +7 (965) 569-89-98
           span
             svg(width="32" height="32")
               use(xlink:href="img/sprite_auto.svg#phone")

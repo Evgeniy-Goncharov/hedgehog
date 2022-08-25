@@ -14,7 +14,7 @@
     margin: 20px 45px;
   }
 
-  &__item--has-child > .main-nav__link {
+  &__item--has-child>.main-nav__link {
     position: relative;
     padding-left: 15px;
 
@@ -61,6 +61,24 @@
 
   &__toggle {
     display: none;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: none;
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 25px;
+      height: 2px;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      margin: auto;
+      background-color: $color-blue-stone;
+      box-shadow: 0 6px 0 0 $color-blue-stone, 0 -6px 0 0 $color-blue-stone;
+    }
   }
 
   &--footer {
@@ -72,10 +90,32 @@
     }
   }
 
-  @media (hover: hover), screen and (min-width: 0\0) {
+  @media (hover: hover),
+  screen and (min-width: 0\0) {
+
     &__link:hover,
     &__link:focus {
       text-decoration: underline;
+    }
+  }
+
+  @include vp-1500 {
+    padding: 14px 20px;
+
+    &__item {
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+  }
+
+  @include vp-1023 {
+    &__list {
+      display: none;
+    }
+
+
+    &__toggle {
+      display: block;
     }
   }
 }

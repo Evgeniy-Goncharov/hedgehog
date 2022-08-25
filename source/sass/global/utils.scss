@@ -7,6 +7,13 @@
   /* stylelint-disable-next-line */
   min-height: calc(100 * var(--vh, 1vh));
 
+  background-image: url("../../img/bg/radial-gradient.png"), url("../../img/bg/bg.png") ;
+  background-repeat: no-repeat, no-repeat;
+  background-position: top center, top right;
+  background-size: 100% 1509px, 100% 1001px;
+
+  position: relative;
+
   .header,
   .footer {
     flex-shrink: 0;
@@ -14,6 +21,21 @@
 
   main {
     flex-grow: 1;
+  }
+
+  @include vp-767 {
+    background-image: url("../../img/bg/radial-gradient--mobile.png"), url("../../img/bg/bg--mobile.png");
+    background-size: 100% 853px, 100% 406px;
+  }
+
+  @include retina {
+    @include desk {
+      background-image: url("../../img/bg/radial-gradient@2x.png"), url("../../img/bg/bg@2x.png");
+    }
+
+    @include vp-767 {
+      background-image: url("../../img/bg/radial-gradient@2x--mobile.png"), url("../../img/bg/bg@2x--mobile.png");
+    }
   }
 }
 
@@ -68,6 +90,14 @@
 
 .underline {
   text-decoration: underline;
+}
+
+.mobile-only {
+  display: none;
+
+  @include vp-767 {
+    display: inherit;
+  }
 }
 
 body {

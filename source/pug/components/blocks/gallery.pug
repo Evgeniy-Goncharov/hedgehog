@@ -3,7 +3,7 @@ mixin gallery()
     const galleryList = [
       {
         name: "Евгений",
-        description: "Очень любит сладости. Маленький сладкоежка=) Мы называем его так между собой. Ручной, любит внимаение",
+        description: `Очень любит сладости. Маленький сладкоежка=) Мы называем его так между собой.<br class="mobile-only"> Ручной, любит внимание`,
         oldPrice: "3 000",
         price: "1 500",
         image: "img-1",
@@ -25,7 +25,7 @@ mixin gallery()
       },
       {
         name: "Евгений",
-        description: "Очень любит сладости. Маленький сладкоежка=) Мы называем его так между собой. Ручной, любит внимаение",
+        description: `Очень любит сладости. Маленький сладкоежка=) Мы называем его так между собой.<br class="mobile-only"> Ручной, любит внимание`,
         oldPrice: "3 000",
         price: "1 500",
         image: "img-1",
@@ -55,7 +55,7 @@ mixin gallery()
               div
                 h3.gallery__item-title= `Ежик “${item.name}”`
 
-                p.gallery__item-description= item.description
+                p.gallery__item-description!= item.description
 
               div
                 span.gallery__old-price= `${item.oldPrice} Р`

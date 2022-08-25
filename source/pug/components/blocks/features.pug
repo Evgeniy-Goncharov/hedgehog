@@ -16,7 +16,7 @@ mixin features()
         wrapperMod: "green"
       },
       {
-        title: "Любовь и забота",
+        title: "Любовь и&nbsp;забота",
         text: "Каждому ежику мы дарим много внимания",
         img: "img/svg/health.svg",
         alt: "Ежик это",
@@ -28,9 +28,9 @@ mixin features()
     .container
       h2.visually-hidden Зачем покупать ёжика?
       ul.features__list
-        each item in featuresList
-          li.features__item
-            h3.features__title=item.title
+        each item, index in featuresList
+          li.features__item(data-order=index)
+            h3.features__title!=item.title
             p.features__text=item.text
             span.features__image-wrapper(class=`features__image-wrapper--${item.wrapperMod}`)
               img.features__image(src=item.img alt=item.alt width="72" height="72")
