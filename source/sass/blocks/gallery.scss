@@ -28,7 +28,7 @@
   padding: 44px 326px 54px 60px;
   position: relative;
   border-radius: 20px;
-  background: url("../../img/bg/card-bg.png") no-repeat bottom -13px right -35px;
+  background: url("../img/bg/card-bg.png") no-repeat bottom -13px right -35px;
   height: auto;
   display: flex;
   flex-direction: column;
@@ -335,11 +335,11 @@
   }
 
   &--prev::after {
-    background: url("../../img/svg/back.svg") no-repeat center;
+    background: url("../img/svg/back.svg") no-repeat center;
   }
 
   &--next::after {
-    background: url("../../img/svg/next.svg") no-repeat center;
+    background: url("../img/svg/next.svg") no-repeat center;
   }
 
   @include vp-767 {

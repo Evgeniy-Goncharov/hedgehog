@@ -9,7 +9,7 @@
     height: 565px;
     left: 0;
     bottom: -43px;
-    background-image: url("../../img/bg/img-1.png");
+    background-image: url("../img/bg/img-1.png");
     background-repeat: no-repeat;
     background-position: bottom left;
     background-size: cover;
@@ -22,7 +22,7 @@
     height: 347px;
     right: 0;
     top: 0;
-    background-image: url("../../img/bg/img-2.png");
+    background-image: url("../img/bg/img-2.png");
     background-repeat: no-repeat, no-repeat;
     background-position: center;
     background-size: 100%;
@@ -39,7 +39,7 @@
       right: 0;
       width: 229px;
       height: 204px;
-      background-image: url("../../img/bg/img-2--mobile.png");
+      background-image: url("../img/bg/img-2--mobile.png");
       background-size: 100%;
       background-position: center;
     }
@@ -52,17 +52,17 @@
   @include retina {
     @include desk {
       &::before {
-        background-image: url("../../img/bg/img-1@2x.png");
+        background-image: url("../img/bg/img-1@2x.png");
       }
 
       &::after {
-        background-image: url("../../img/bg/img-2@2x.png");
+        background-image: url("../img/bg/img-2@2x.png");
       }
     }
 
     @include vp-1023 {
       &::after {
-        background-image: url("../../img/bg/img-2@2x--mobile.png");
+        background-image: url("../img/bg/img-2@2x--mobile.png");
       }
     }
   }
