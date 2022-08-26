@@ -66,7 +66,8 @@
     background: transparent;
     border: none;
 
-    &::before {
+    &::before,
+    &::after {
       content: "";
       position: absolute;
       width: 25px;
@@ -78,7 +79,38 @@
       margin: auto;
       background-color: $color-blue-stone;
       box-shadow: 0 6px 0 0 $color-blue-stone, 0 -6px 0 0 $color-blue-stone;
+      transition: transform, box-shadow $trans-default;
     }
+  }
+
+  &__toggle.is-open {
+    &::before,
+    &::after {
+      box-shadow: none;
+      width: 25px;
+    }
+
+    &::before {
+      transform: rotate(45deg);
+    }
+
+    &::after {
+      transform: rotate(-45deg);
+    }
+  }
+
+  &__phone {
+    font-family: "Raleway", "Arial", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 26px;
+
+    text-transform: uppercase;
+    font-feature-settings: 'tnum' on, 'lnum' on;
+
+    color: $color-blue-stone;
+    display: none;
   }
 
   &--footer {
@@ -106,16 +138,76 @@
       margin-left: 10px;
       margin-right: 10px;
     }
+
+    &--footer {
+      padding: 0;
+      margin-right: 20px;
+    }
   }
 
   @include vp-1023 {
-    &__list {
-      display: none;
-    }
-
-
     &__toggle {
       display: block;
+      z-index: 4;
+    }
+
+    .main-nav__wrapper {
+      background-color: $color-default-white;
+      position: absolute;
+      left: -100%;
+      top: 8px;
+      width: calc(100vw - 22px);
+      border-radius: 0 10px 10px 0;
+      min-height: 480px;
+      z-index: 3;
+      padding: 88px 36px 43px;
+      box-shadow: 4px 4px 20px #E3E3E3;
+      transition: left $trans-default;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      &.is-open {
+        left: 0;
+      }
+    }
+
+    .main-nav__list {
+      flex-direction: column;
+    }
+
+    .main-nav__item {
+      margin: 10px 0;
+    }
+
+    .main-nav__item--has-child>.main-nav__link {
+      &::before {
+        display: none;
+      }
+    }
+
+    .main-nav__link {
+      font-size: 18px;
+      line-height: 22px;
+      padding: 0;
+    }
+
+    &__phone {
+      display: inline;
+    }
+
+    &--footer {
+      font-size: 16px;
+      line-height: 19px;
+      padding: 0;
+    }
+
+    &--footer .main-nav__list {
+      display: block;
+    }
+
+    &--footer .main-nav__item {
+      margin: 30px 0;
     }
   }
 }

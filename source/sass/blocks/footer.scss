@@ -5,6 +5,12 @@
   color: $color-default-white;
   display: flex;
   justify-content: space-between;
+
+  @include vp-1500 {
+    display: block;
+    padding: 35px 80px 111px 20px;
+    position: relative;
+  }
 }
 
 .footer__left-column {
@@ -15,10 +21,18 @@
 .footer__right-column {
   display: flex;
   align-items: flex-start;
+
+  @include vp-1500 {
+    display: block;
+  }
 }
 
 .footer__nav {
   margin-right: 55px;
+
+  @include vp-1500 {
+    margin: 56px 0 52px;
+  }
 }
 
 .footer__social-list {
@@ -36,9 +50,11 @@
     height: 40px;
     fill: $color-default-white;
     transition: fill $trans-default;
+    display: block;
   }
 
   a {
+    display: block;
 
     @media (hover: hover),
     screen and (min-width: 0\0) {
@@ -50,6 +66,19 @@
         }
       }
     }
+  }
+
+  @include vp-1500 {
+    margin: 0 20px 0 0;
+    grid-template-columns: 1fr;
+    padding: 0;
+    max-height: 150px;
+    overflow: auto;
+    gap: 11px;
+    position: absolute;
+    top: 41px;
+    right: 19px;
+    margin: 0;
   }
 }
 
@@ -84,4 +113,12 @@
   line-height: 12px;
   color: $color-default-white;
   margin: 18px 0;
+
+  @include vp-1500 {
+    position: absolute;
+    bottom: 18px;
+
+    font-size: 11px;
+    line-height: 14px;
+  }
 }

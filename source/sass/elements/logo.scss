@@ -2,6 +2,15 @@
   &--white .logo__image {
     fill: $color-default-white;
   }
+
+  &--footer .logo__image {
+    width: 121px;
+    height: 56px;
+  }
+
+  @include vp-1023 {
+    z-index: 4;
+  }
 }
 
 .logo__image {

@@ -110,6 +110,8 @@ const copy = () => {
     'source/video/**',
     'source/downloads/**',
     'source/*.php',
+    'source/site.webmanifest',
+    'source/favicon.ico'
   ], {
     base: 'source',
   })

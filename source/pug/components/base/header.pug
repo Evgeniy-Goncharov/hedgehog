@@ -19,9 +19,9 @@ mixin header(headerMods, currentUrl)
     +logo(currentUrl).header__logo
     .header__right-column
       nav.main-nav
-        button.header__menu-button.main-nav__toggle.btn-reset(type="button", aria-label="Переключатель отображения меню", aria-pressed="false")
+        button.header__menu-button.main-nav__toggle.btn-reset(type="button", aria-label="Переключатель отображения меню" data-menu="menu-button", aria-pressed="false")
           +icon("icon-burger", 20, 20)
-        .main-nav__wrapper
+        .main-nav__wrapper(data-menu="mobile-menu-wrapper")
           ul.main-nav__list
             li.main-nav__item.main-nav__item--has-child
               a.main-nav__link(href="#") Каталог
@@ -42,6 +42,9 @@ mixin header(headerMods, currentUrl)
                   span.main-nav__link.is-active=link.text
                 else
                   a.main-nav__link(href=link.href)=link.text
+
+          a.main-nav__phone(href="tel:+79655698998") +7 (965) 569-89-98
+
       div.header__item
         a.header__phone(href="tel:+79655698998")
           span +7 (965) 569-89-98

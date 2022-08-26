@@ -35,26 +35,26 @@ mixin footer(footerMods, currentUrl)
     ]
 
   footer.footer(class=footerMods)
-    //- .footer__left-column
-    //-   +logo(currentUrl).logo--white
-    //-   p.footer__copy Все права защищены.<br> Указанная стоимость товаров и условия их приобретения действительны на текущую дату.
+    .footer__left-column
+      +logo(currentUrl).logo--white.logo--footer
+      p.footer__copy Все права защищены.<br> Указанная стоимость товаров и условия их приобретения действительны на текущую дату.
 
-    //- .footer__right-column
-    //-   .footer__nav.main-nav.main-nav--footer
-    //-     ul.main-nav__list
-    //-       each link in footerLinks
-    //-         li.main-nav__item
-    //-           a(href=link.href).main-nav__link= link.text
+    .footer__right-column
+      .footer__nav.main-nav.main-nav--footer
+        ul.main-nav__list
+          each link in footerLinks
+            li.main-nav__item
+              a(href=link.href).main-nav__link= link.text
 
-    //-   ul.footer__social-list
-    //-     each link in socialLinks
-    //-       li.footer__social-item
-    //-         a(href="#")
-    //-           span.visually-hidden= link.text
-    //-           svg(width="40" height="40")
-    //-             use(xlink:href=`img/sprite_auto.svg#${link.icon}`)
+      ul.footer__social-list
+        each link in socialLinks
+          li.footer__social-item
+            a(href="#")
+              span.visually-hidden= link.text
+              svg(width="40" height="40")
+                use(xlink:href=`img/sprite_auto.svg#${link.icon}`)
 
-    //-   a.footer__phone(href="tel:+79655698998") +7 (965) 569-89-98
+      a.footer__phone(href="tel:+79655698998") +7 (965) 569-89-98
 
 
 
