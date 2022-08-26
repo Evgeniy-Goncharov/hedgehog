@@ -1446,7 +1446,7 @@ button,
   min-height: 100vh;
   /* stylelint-disable-next-line */
   min-height: calc(100 * var(--vh, 1vh));
-  background-image: url("../../img/bg/radial-gradient.png"), url("../../img/bg/bg.png");
+  background-image: url("../img/bg/radial-gradient.png"), url("../img/bg/bg.png");
   background-repeat: no-repeat, no-repeat;
   background-position: top center, top right;
   background-size: 100% 1509px, 100% 1001px;
@@ -2776,7 +2776,7 @@ body {
   height: 565px;
   left: 0;
   bottom: -43px;
-  background-image: url("../../img/bg/img-1.png");
+  background-image: url("../img/bg/img-1.png");
   background-repeat: no-repeat;
   background-position: bottom left;
   background-size: cover;
@@ -2789,7 +2789,7 @@ body {
   height: 347px;
   right: 0;
   top: 0;
-  background-image: url("../../img/bg/img-2.png");
+  background-image: url("../img/bg/img-2.png");
   background-repeat: no-repeat, no-repeat;
   background-position: center;
   background-size: 100%;
@@ -2901,7 +2901,7 @@ body {
   padding: 44px 326px 54px 60px;
   position: relative;
   border-radius: 20px;
-  background: url("../../img/bg/card-bg.png") no-repeat bottom -13px right -35px;
+  background: url("../img/bg/card-bg.png") no-repeat bottom -13px right -35px;
   height: auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -3124,11 +3124,11 @@ body {
 }
 
 .gallery__button--prev::after {
-  background: url("../../img/svg/back.svg") no-repeat center;
+  background: url("../img/svg/back.svg") no-repeat center;
 }
 
 .gallery__button--next::after {
-  background: url("../../img/svg/next.svg") no-repeat center;
+  background: url("../img/svg/next.svg") no-repeat center;
 }
 
 .order {
@@ -3322,15 +3322,15 @@ fieldset.order__row {
 
 @media (-webkit-min-device-pixel-ratio: 1.5) and (min-width: 1024px), (-o-min-device-pixel-ratio: 3/2) and (min-width: 1024px), (min-resolution: 144dpi) and (min-width: 1024px), (min-resolution: 1.5dppx) and (min-width: 1024px) {
   .wrapper {
-    background-image: url("../../img/bg/radial-gradient@2x.png"), url("../../img/bg/bg@2x.png");
+    background-image: url("../img/bg/radial-gradient@2x.png"), url("../img/bg/bg@2x.png");
   }
 
   .features::before {
-    background-image: url("../../img/bg/img-1@2x.png");
+    background-image: url("../img/bg/img-1@2x.png");
   }
 
   .features::after {
-    background-image: url("../../img/bg/img-2@2x.png");
+    background-image: url("../img/bg/img-2@2x.png");
   }
 }
 
@@ -3541,7 +3541,7 @@ fieldset.order__row {
     right: 0;
     width: 229px;
     height: 204px;
-    background-image: url("../../img/bg/img-2--mobile.png");
+    background-image: url("../img/bg/img-2--mobile.png");
     background-size: 100%;
     background-position: center;
   }
@@ -3559,13 +3559,13 @@ fieldset.order__row {
 
 @media (-webkit-min-device-pixel-ratio: 1.5) and (max-width: 1023px), (-o-min-device-pixel-ratio: 3/2) and (max-width: 1023px), (min-resolution: 144dpi) and (max-width: 1023px), (min-resolution: 1.5dppx) and (max-width: 1023px) {
   .features::after {
-    background-image: url("../../img/bg/img-2@2x--mobile.png");
+    background-image: url("../img/bg/img-2@2x--mobile.png");
   }
 }
 
 @media (max-width: 767px) {
   .wrapper {
-    background-image: url("../../img/bg/radial-gradient--mobile.png"), url("../../img/bg/bg--mobile.png");
+    background-image: url("../img/bg/radial-gradient--mobile.png"), url("../img/bg/bg--mobile.png");
     background-size: 100% 853px, 100% 406px;
   }
 
@@ -3972,6 +3972,6 @@ fieldset.order__row {
 
 @media (-webkit-min-device-pixel-ratio: 1.5) and (max-width: 767px), (-o-min-device-pixel-ratio: 3/2) and (max-width: 767px), (min-resolution: 144dpi) and (max-width: 767px), (min-resolution: 1.5dppx) and (max-width: 767px) {
   .wrapper {
-    background-image: url("../../img/bg/radial-gradient@2x--mobile.png"), url("../../img/bg/bg@2x--mobile.png");
+    background-image: url("../img/bg/radial-gradient@2x--mobile.png"), url("../img/bg/bg@2x--mobile.png");
   }
 }
