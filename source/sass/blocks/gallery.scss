@@ -12,10 +12,15 @@
   position: relative;
   max-width: 1317px;
   margin: 0 auto;
+  overflow: hidden;
 
   @include vp-767 {
     padding: 0 0 0 21px;
   }
+}
+
+.gallery__wrapper {
+  overflow: visible;
 }
 
 .gallery__list {
@@ -33,6 +38,13 @@
   display: flex;
   flex-direction: column;
   min-height: 350px;
+  opacity: 0;
+  transition: opacity $trans-default;
+
+  &.swiper-slide-active,
+  &.swiper-slide-next {
+    opacity: 1;
+  }
 
   div:first-of-type {
     flex-grow: 1;
@@ -93,6 +105,7 @@
 
     background-size: 182px 70px;
     background-position: bottom 25px right -45px;
+    opacity: 1;
 
     &::before {
       font-size: 12px;
@@ -172,6 +185,12 @@
   position: absolute;
   top: 19px;
   right: 28px;
+  display: block;
+  padding-bottom: 7px;
+
+  svg {
+    display: block;
+  }
 
   &:hover~.gallery__item-info,
   &:focus~.gallery__item-info {
@@ -217,8 +236,8 @@
 
 .gallery__item-info {
   position: absolute;
-  top: 70px;
-  right: -60px;
+  top: 74px;
+  right: -63px;
   background-color: $color-blue-stone;
   color: $color-default-white;
   padding: 34px 29px;
@@ -232,6 +251,11 @@
   font-size: 14px;
   line-height: 22px;
   text-transform: lowercase;
+
+  &:hover,
+  &:focus {
+    display: block;
+  }
 
   span {
     display: inline-flex;
@@ -258,7 +282,7 @@
     border-left: 15px solid transparent;
     border-right: 15px solid transparent;
     position: absolute;
-    top: -18px;
+    top: -17px;
     left: 0;
     right: 0;
     margin: 0 auto;
