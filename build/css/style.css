@@ -1256,7 +1256,7 @@ button.swiper-pagination-bullet {
   font-weight: 700;
   font-family: "Cormorant Infant";
   font-display: swap;
-  src: url("../fonts/cormorantlnfantbold.woff2") format("woff2"), url("../fonts/cormorantlnfantbold.woff") format("woff");
+  src: url("../fonts/cormorantinfantbold.woff2") format("woff2"), url("../fonts/cormorantinfantbold.woff") format("woff");
 }
 
 @font-face {
