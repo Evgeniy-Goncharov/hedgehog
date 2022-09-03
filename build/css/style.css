@@ -1253,18 +1253,10 @@ button.swiper-pagination-bullet {
 
 @font-face {
   font-style: normal;
-  font-weight: 400;
-  font-family: "";
-  font-display: swap;
-  src: url("../fonts/.woff2") format("woff2"), url("../fonts/.woff") format("woff");
-}
-
-@font-face {
-  font-style: normal;
   font-weight: 700;
   font-family: "Cormorant Infant";
   font-display: swap;
-  src: url("../fonts/cormorantinfantbold.woff2") format("woff2"), url("../fonts/cormorantinfantbold.woff") format("woff");
+  src: url("../fonts/cormorantlnfantbold.woff2") format("woff2"), url("../fonts/cormorantlnfantbold.woff") format("woff");
 }
 
 @font-face {
